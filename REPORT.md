@@ -92,18 +92,18 @@ not grow without limit, which is consistent with Θ(n) complexity.
 
 
 ## 5. Discussion
-Overall, the measurements are consistent with the theoretical analysis.
+The results I obtained align well with what the theory predicts.
 MergeSort and QuickSort show execution times of the same order across all input 
 sizes (for example, at n = 1,000,000: 114 ms vs. 172 ms), which corresponds to 
 their common asymptotic complexity of Θ(n log n).
 
 QuickSelect was significantly faster than both algorithms for large 
-n (13.9 ms vs. 114–172 ms at n = 1,000,000). This confirms its Θ(n) complexity 
-instead of Θ(n log n), because it processes only one side of the partition at 
-each step.
+n (13.9 ms vs. 114–172 ms at n = 1,000,000). This matches the Θ(n) result I derived earlier, 
+since QuickSelect discards half the array 
+at every step instead of processing both sides like a full sort.
 
-An important observation is that QuickSort did not degrade on already sorted 
-input (sorted). Its execution time was of the same order as for random input 
+One thing that stood out in my results: QuickSort's performance on sorted input didn't degrade at all.
+Its execution time was of the same order as for random input 
 (71.7 ms vs. 172.5 ms at n = 1,000,000, with depth = 14 in both cases). 
 This directly demonstrates that a random pivot protects against the classic O(n²) 
 worst case on sorted data, which would occur with a fixed pivot selection strategy.
