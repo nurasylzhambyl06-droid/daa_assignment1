@@ -116,9 +116,8 @@ further.
 
 For small n (1,000), execution time shows more noise relative to the overall trend. 
 For example, QuickSort on duplicates at n = 1,000 was faster than for larger n by 
-an amount that is not proportional to the input-size increase. This is a typical JVM 
-warm-up effect: the JIT compiler has not yet had enough time to optimize the bytecode 
-during the initial runs.
+an amount that is not proportional to the input-size increase. I attribute this to JVM warm-up — 
+the JIT compiler simply hadn't kicked in yet on the first few runs
 
 For very large n (1,000,000), the increase in execution time for MergeSort and 
 QuickSort exceeds the purely theoretical n log n growth in the number of comparisons.
